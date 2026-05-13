@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oluwatobi Shoyinka — Senior BI Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F5F2ED;
+    --bg2: #EDEAE3;
+    --ink: #1A1714;
+    --ink2: #6B6560;
+    --ink3: #9A9490;
+    --rule: #D8D3CB;
+    --accent: #1A1714;
+    --serif: 'Playfair Display', Georgia, serif;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--ink2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a.active { color: var(--ink); }
+
+  .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0; right: 0;
+    height: 1.5px;
+    background: var(--ink);
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ── SECTIONS ── */
+  section { padding: 5rem 2rem; max-width: 760px; margin: 0 auto; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 2.5rem;
+  }
+
+  hr.rule { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  /* ── HERO ── */
+  #home {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 9vw, 5rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-bio {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: 560px;
+    margin-bottom: 3rem;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0;
+  }
+
+  .meta-row {
+    display: contents;
+  }
+
+  .meta-key {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .meta-val {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--ink);
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+  }
+
+  .meta-row:last-child .meta-key,
+  .meta-row:last-child .meta-val {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── ABOUT ── */
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--ink2);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text strong { color: var(--ink); font-weight: 500; }
+
+  /* ── STACK ── */
+  .stack-grid {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0;
+  }
+
+  .stack-row { display: contents; }
+
+  .stack-key {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    padding: 1rem 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .stack-val {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--ink);
+    padding: 1rem 0;
+    border-top: 1px solid var(--rule);
+    line-height: 1.6;
+  }
+
+  .stack-dot { color: var(--ink3); margin: 0 0.35rem; }
+
+  .stack-row:last-child .stack-key,
+  .stack-row:last-child .stack-val {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PROJECTS ── */
+  .project-list { display: flex; flex-direction: column; gap: 0; }
+
+  .project-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 0 1.5rem;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--rule);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s;
+  }
+
+  .project-item:last-child { border-bottom: 1px solid var(--rule); }
+
+  .project-num {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ink3);
+    padding-top: 0.3rem;
+    font-weight: 400;
+  }
+
+  .project-body {}
+
+  .project-title {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+  }
+
+  .project-sub {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink3);
+    margin-bottom: 0.9rem;
+    font-weight: 400;
+  }
+
+  .project-desc {
+    font-size: 0.95rem;
+    color: var(--ink2);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.05em;
+    color: var(--ink3);
+    background: var(--bg2);
+    border: 1px solid var(--rule);
+    padding: 0.2rem 0.55rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  .impact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.85rem;
+  }
+
+  .impact-chip {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .impact-chip::before { content: '↑ '; color: var(--ink3); }
+
+  /* ── EXPERIENCE ── */
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+
+  .exp-item {
+    padding: 2rem 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .exp-item:last-child { border-bottom: 1px solid var(--rule); }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.4rem;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .exp-role {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .exp-period {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--ink3);
+    padding-top: 0.25rem;
+    white-space: nowrap;
+  }
+
+  .exp-company {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink3);
+    margin-bottom: 1rem;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .exp-bullets li {
+    font-size: 0.9rem;
+    color: var(--ink2);
+    line-height: 1.65;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .exp-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--rule);
+    font-weight: 300;
+  }
+
+  .exp-achievements {
+    margin-top: 1rem;
+    padding: 0.85rem 1rem;
+    background: var(--bg2);
+    border-left: 2px solid var(--ink);
+  }
+
+  .exp-ach-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    margin-bottom: 0.4rem;
+  }
+
+  .exp-ach-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .exp-ach-list li {
+    font-size: 0.85rem;
+    color: var(--ink);
+    font-weight: 400;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .exp-ach-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    font-size: 0.5rem;
+    top: 0.35rem;
+    color: var(--ink3);
+  }
+
+  /* ── CERTIFICATIONS ── */
+  .cert-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .cert-item:last-child { border-bottom: 1px solid var(--rule); }
+
+  .cert-name {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  .cert-year {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--ink3);
+  }
+
+  /* ── EDUCATION ── */
+  .edu-item {
+    padding: 1.2rem 0;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .edu-item:last-child { border-bottom: 1px solid var(--rule); }
+
+  .edu-degree {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .edu-school {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--ink3);
+    margin-top: 0.2rem;
+  }
+
+  .edu-badge {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    color: var(--ink3);
+    background: var(--bg2);
+    border: 1px solid var(--rule);
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-top: 0.2rem;
+  }
+
+  /* ── CONTACT ── */
+  .contact-intro {
+    font-size: 1rem;
+    color: var(--ink2);
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contact-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--rule);
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.15s;
+  }
+
+  .contact-link:last-child { border-bottom: 1px solid var(--rule); }
+
+  .contact-link:hover { color: var(--ink); }
+
+  .contact-link-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink3);
+  }
+
+  .contact-link-val {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .contact-link-arrow {
+    font-size: 0.8rem;
+    color: var(--ink3);
+    transition: transform 0.2s;
+  }
+
+  .contact-link:hover .contact-link-arrow { transform: translateX(3px); }
+
+  /* ── FOOTER ── */
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .footer-name {
+    font-family: var(--serif);
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--ink3);
+  }
+
+  .footer-meta {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    color: var(--ink3);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 600px) {
+    nav { padding: 0 1.25rem; }
+    .nav-links { gap: 1.25rem; }
+    section { padding: 3.5rem 1.25rem; }
+    footer { padding: 2rem 1.25rem 3rem; }
+    .stack-grid { grid-template-columns: 90px 1fr; }
+    .meta-grid { grid-template-columns: 90px 1fr; }
+    .exp-header { flex-direction: column; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.5s ease both; }
+  .hero-name    { animation: fadeUp 0.5s 0.1s ease both; }
+  .hero-bio     { animation: fadeUp 0.5s 0.2s ease both; }
+  .meta-grid    { animation: fadeUp 0.5s 0.3s ease both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-name">Oluwatobi<br>Shoyinka</div>
+  <ul class="nav-links">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HOME / HERO -->
+<section id="home">
+  <p class="hero-eyebrow">Senior BI Analyst &nbsp;·&nbsp; Berlin</p>
+  <h1 class="hero-name">Oluwatobi<br>Shoyinka</h1>
+  <p class="hero-bio">I turn complex data into scalable insights that drive strategic business decisions.</p>
+
+  <div class="meta-grid">
+    <div class="meta-row">
+      <span class="meta-key">Status</span>
+      <span class="meta-val">At Quandoo · Berlin</span>
+    </div>
+    <div class="meta-row">
+      <span class="meta-key">Focus</span>
+      <span class="meta-val">Analytics engineering &amp; BI</span>
+    </div>
+    <div class="meta-row">
+      <span class="meta-key">Background</span>
+      <span class="meta-val">9 yrs · Data + Applied Mathematics</span>
+    </div>
+    <div class="meta-row">
+      <span class="meta-key">Education</span>
+      <span class="meta-val">M.Sc. Applied Mathematics</span>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">About</p>
+  <h2 class="section-title">Revenue-focused analyst with a builder's mindset.</h2>
+  <p class="about-text">
+    I'm a Senior BI Analyst with <strong>9+ years of experience</strong> transforming raw, complex data
+    into scalable analytical frameworks that teams actually use. My work spans the full analytics stack —
+    from writing dbt models and ETL pipelines to delivering executive dashboards and predictive models
+    that influence commercial strategy.
+  </p>
+  <p class="about-text">
+    Currently at <strong>Quandoo GmbH</strong> in Berlin, I own the end-to-end data layer: modeling,
+    validation, insight delivery, and stakeholder enablement. Previously at <strong>Access Bank PLC</strong>,
+    I built churn prediction models and financial forecasting systems that directly improved retention
+    and revenue outcomes.
+  </p>
+  <p class="about-text">
+    I care deeply about <strong>data quality, governance</strong>, and building foundations that scale —
+    not just dashboards that look good for a week.
+  </p>
+</section>
+
+<hr class="rule">
+
+<!-- STACK -->
+<section id="stack">
+  <p class="section-label">Stack</p>
+  <h2 class="section-title">What I reach for.</h2>
+
+  <div class="stack-grid">
+    <div class="stack-row">
+      <span class="stack-key">Data</span>
+      <span class="stack-val">SQL (BigQuery / Snowflake)<span class="stack-dot">·</span>Python<span class="stack-dot">·</span>dbt<span class="stack-dot">·</span>Excel</span>
+    </div>
+    <div class="stack-row">
+      <span class="stack-key">AI</span>
+      <span class="stack-val">Claude<span class="stack-dot">·</span>AI Agents</span>
+    </div>
+    <div class="stack-row">
+      <span class="stack-key">Visualisation</span>
+      <span class="stack-val">Tableau<span class="stack-dot">·</span>Power BI<span class="stack-dot">·</span>Metabase</span>
+    </div>
+    <div class="stack-row">
+      <span class="stack-key">Analytics</span>
+      <span class="stack-val">Cohort &amp; Funnel Analysis<span class="stack-dot">·</span>A/B Testing<span class="stack-dot">·</span>Predictive Modeling<span class="stack-dot">·</span>KPI Design</span>
+    </div>
+    <div class="stack-row">
+      <span class="stack-key">CRM</span>
+      <span class="stack-val">Salesforce<span class="stack-dot">·</span>HubSpot</span>
+    </div>
+    <div class="stack-row">
+      <span class="stack-key">Domains</span>
+      <span class="stack-val">Product<span class="stack-dot">·</span>Marketing<span class="stack-dot">·</span>Operations<span class="stack-dot">·</span>Revenue Analytics</span>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label">Selected Work</p>
+  <h2 class="section-title">Projects that show the shape of the work.</h2>
+
+  <div class="project-list">
+
+    <div class="project-item">
+      <span class="project-num">01</span>
+      <div class="project-body">
+        <h3 class="project-title">Market Penetration Analysis Framework</h3>
+        <p class="project-sub">Quandoo GmbH · Berlin</p>
+        <p class="project-desc">
+          Built an end-to-end data-driven marketing acquisition strategy by combining internal
+          transactional data with geospatial datasets to identify under-penetrated markets.
+          The framework produced a prioritised acquisition roadmap delivered through an executive
+          Tableau dashboard, enabling the commercial team to reallocate budget with precision.
+        </p>
+        <div class="tag-row">
+          <span class="tag">SQL · BigQuery</span>
+          <span class="tag">Python</span>
+          <span class="tag">Geospatial Data</span>
+          <span class="tag">Tableau</span>
+          <span class="tag">dbt</span>
+        </div>
+        <div class="impact-row">
+          <span class="impact-chip">25% increase in acquisition</span>
+          <span class="impact-chip">15% revenue growth</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <span class="project-num">02</span>
+      <div class="project-body">
+        <h3 class="project-title">Scalable dbt Data Transformation Pipeline</h3>
+        <p class="project-sub">Quandoo GmbH · Berlin</p>
+        <p class="project-desc">
+          Designed and implemented a company-wide dbt data modeling layer, replacing ad-hoc SQL
+          with a governed, tested, and documented transformation architecture. Established a single
+          source of truth for reporting across product, marketing, and operations, with automated
+          data validation to catch issues before they reach dashboards.
+        </p>
+        <div class="tag-row">
+          <span class="tag">dbt</span>
+          <span class="tag">BigQuery</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Data Modeling</span>
+          <span class="tag">ETL/ELT</span>
+        </div>
+        <div class="impact-row">
+          <span class="impact-chip">35% faster data processing</span>
+          <span class="impact-chip">25% better reporting consistency</span>
+          <span class="impact-chip">25% reduction in data errors</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <span class="project-num">03</span>
+      <div class="project-body">
+        <h3 class="project-title">Customer Churn Prediction Model</h3>
+        <p class="project-sub">Access Bank PLC · Nigeria</p>
+        <p class="project-desc">
+          Developed an end-to-end Python-based churn prediction model using historical customer
+          behavioural data. The model identified at-risk customer segments early in the lifecycle,
+          enabling proactive retention interventions by CRM and product teams. Complemented by
+          lifecycle cohort analysis (retention, churn, LTV) to surface root-cause drivers.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Python</span>
+          <span class="tag">Predictive Modeling</span>
+          <span class="tag">Cohort Analysis</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Power BI</span>
+        </div>
+        <div class="impact-row">
+          <span class="impact-chip">35% reduction in churn</span>
+          <span class="impact-chip">15% increase in retention</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <span class="project-num">04</span>
+      <div class="project-body">
+        <h3 class="project-title">Financial Forecasting &amp; Budgeting System</h3>
+        <p class="project-sub">Access Bank PLC · Nigeria</p>
+        <p class="project-desc">
+          Designed financial forecasting and retention models using historical banking data,
+          visualised through interactive Power BI dashboards. The system enabled data-driven
+          budget allocation and improved planning accuracy for executive stakeholders, reducing
+          reliance on manual spreadsheet forecasting.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Python</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">Forecasting</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Statistical Analysis</span>
+        </div>
+        <div class="impact-row">
+          <span class="impact-chip">40% improvement in forecast accuracy</span>
+          <span class="impact-chip">30% better budget efficiency</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <span class="project-num">05</span>
+      <div class="project-body">
+        <h3 class="project-title">Real-Time Executive Operations Dashboard</h3>
+        <p class="project-sub">Quandoo GmbH · Berlin</p>
+        <p class="project-desc">
+          Built a suite of real-time Tableau dashboards for senior leadership, consolidating
+          commercial, product, and operational KPIs in a single interface. Drove self-service
+          analytics adoption across teams, reducing ad-hoc data requests and enabling faster,
+          more confident decision-making at every level of the business.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Tableau</span>
+          <span class="tag">SQL · BigQuery</span>
+          <span class="tag">dbt</span>
+          <span class="tag">KPI Design</span>
+          <span class="tag">Data Storytelling</span>
+        </div>
+        <div class="impact-row">
+          <span class="impact-chip">30% faster decision-making</span>
+          <span class="impact-chip">40% increase in self-service analytics</span>
+          <span class="impact-chip">30% operational efficiency gain</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label">Experience</p>
+  <h2 class="section-title">Nine years of data, end to end.</h2>
+
+  <div class="exp-list">
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Senior BI Analyst</span>
+        <span class="exp-period">Jan 2022 – Present</span>
+      </div>
+      <p class="exp-company">Quandoo GmbH · Berlin, Germany</p>
+      <ul class="exp-bullets">
+        <li>Delivered company-wide analytics frameworks, enabling executive decision-making and contributing to 20% revenue growth.</li>
+        <li>Designed scalable dbt transformation pipelines, improving data processing efficiency by 35%.</li>
+        <li>Owned end-to-end data modeling, establishing a governed data layer that improved reporting consistency by 25%.</li>
+        <li>Built retention and forecasting models, improving accuracy by 40% and enhancing revenue predictability.</li>
+        <li>Developed an end-to-end marketing acquisition strategy using internal and geospatial data, increasing acquisition by 25%.</li>
+        <li>Implemented data validation frameworks, improving data accuracy by 25% and reducing reporting errors.</li>
+        <li>Drove BI adoption across teams, improving self-service analytics usage by 40%.</li>
+      </ul>
+      <div class="exp-achievements">
+        <p class="exp-ach-label">Key Achievements</p>
+        <ul class="exp-ach-list">
+          <li>+25% acquisition &amp; +15% revenue via market penetration analysis framework</li>
+          <li>+30% operational efficiency through real-time Tableau dashboards</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Lead Business Data Analyst</span>
+        <span class="exp-period">Jul 2020 – Dec 2021</span>
+      </div>
+      <p class="exp-company">Access Bank PLC · Nigeria</p>
+      <ul class="exp-bullets">
+        <li>Led end-to-end analytics delivery across multiple banking products, influencing executive decisions on revenue and retention.</li>
+        <li>Designed financial forecasting and budgeting models visualised through Power BI, improving planning accuracy by 30%.</li>
+        <li>Developed a Python-based churn prediction model, reducing customer churn by 35%.</li>
+        <li>Built Python-based data pipelines (web scraping and sentiment analysis) to enhance customer analytics capabilities.</li>
+        <li>Conducted advanced customer and financial analysis to identify behavioural drivers, increasing retention by 15%.</li>
+      </ul>
+      <div class="exp-achievements">
+        <p class="exp-ach-label">Key Achievements</p>
+        <ul class="exp-ach-list">
+          <li>Identified and resolved revenue leakages, contributing to a 15% increase in revenue</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Business Data / Strategy Analyst</span>
+        <span class="exp-period">Jan 2018 – Jun 2020</span>
+      </div>
+      <p class="exp-company">Access Bank PLC · Nigeria</p>
+      <ul class="exp-bullets">
+        <li>Delivered data-driven insights to product, marketing, and finance teams, supporting product adoption and sales growth.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Education -->
+  <div style="margin-top: 3rem;">
+    <p class="section-label">Education</p>
+    <div>
+      <div class="edu-item">
+        <div>
+          <p class="edu-degree">Applied Mathematics (M.Sc.)</p>
+          <p class="edu-school">University of Lagos, Nigeria</p>
+        </div>
+        <span class="edu-badge">Postgraduate</span>
+      </div>
+      <div class="edu-item">
+        <div>
+          <p class="edu-degree">Mathematics (B.Sc.)</p>
+          <p class="edu-school">University of Agriculture Abeokuta, Nigeria</p>
+        </div>
+        <span class="edu-badge">Undergraduate</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certifications -->
+  <div style="margin-top: 3rem;">
+    <p class="section-label">Certifications</p>
+    <div class="cert-grid">
+      <div class="cert-item">
+        <span class="cert-name">Tableau Desktop Certified Professional</span>
+        <span class="cert-year">2023</span>
+      </div>
+      <div class="cert-item">
+        <span class="cert-name">Data Warehousing – The Ultimate Guide</span>
+        <span class="cert-year">2024</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<hr class="rule">
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label">Contact</p>
+  <h2 class="section-title">Let's work together.</h2>
+  <p class="contact-intro">
+    Open to senior analytics, analytics engineering, and BI roles. Based in Berlin with
+    permanent residency. Fluent in English, working knowledge of German.
+  </p>
+
+  <div class="contact-links">
+    <a href="mailto:shoyinkatobi@gmail.com" class="contact-link">
+      <span class="contact-link-label">Email</span>
+      <span class="contact-link-val">shoyinkatobi@gmail.com</span>
+      <span class="contact-link-arrow">→</span>
+    </a>
+    <a href="https://linkedin.com" target="_blank" class="contact-link">
+      <span class="contact-link-label">LinkedIn</span>
+      <span class="contact-link-val">linkedin.com/in/oluwatobi-shoyinka</span>
+      <span class="contact-link-arrow">→</span>
+    </a>
+    <a href="https://github.com" target="_blank" class="contact-link">
+      <span class="contact-link-label">GitHub</span>
+      <span class="contact-link-val">Add your GitHub here</span>
+      <span class="contact-link-arrow">→</span>
+    </a>
+    <a href="tel:+4917718567134" class="contact-link">
+      <span class="contact-link-label">Phone</span>
+      <span class="contact-link-val">+49 177 185 6713</span>
+      <span class="contact-link-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Oluwatobi Shoyinka</span>
+  <span class="footer-meta">Senior BI Analyst · Berlin · 2025</span>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
